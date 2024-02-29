@@ -1,0 +1,171 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+p {
+    color: rgb(61, 61, 61);
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:visited {
+    color: rgb(53, 53, 53);
+}
+
+.avatar{
+    width: 35px;
+    aspect-ratio: 1 / 1;
+}
+
+.hidden{
+    display: none;
+}
+
+.container{
+    padding: 1rem;
+}
+
+.notification-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 7px;
+}
+
+.notification-header__style{
+    display: flex;
+    align-items: center;
+}
+
+h3{
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+/* Psuedo Elements for notifications*/
+
+h3::after{
+    content: '3';
+    color: white;
+    font-size: .65em;
+    background-color: rgb(39, 39, 187);
+    padding: .2rem .65rem;
+    border-radius: 5px;
+    vertical-align: middle;
+    line-height: normal;
+    opacity: var(--opacity, 100);
+}
+
+.notification-container__notification-content[data-notification="unread"]::after{
+    content: '';
+    display: inline-block;
+    background: rgb(255, 110, 110);
+    width: 8px;
+    height: 8px;
+    border-radius: 100vw;
+    align-self: center;
+    margin-left: 5px;
+    opacity: var(--opacity, 100);
+}
+
+.mark-all-read{
+    color:rgb(39, 39, 187);
+}
+
+.notifications{
+    display: grid;
+    padding-inline: .75rem;
+    padding-block: 2rem;
+    gap: 2rem;
+}
+
+.notifications-section__notification{
+    display: flex;
+    gap: 1rem;
+}
+
+.user-name-style{
+    font-weight: 700;
+}
+
+.link-to-post{
+    color:rgb(39, 39, 187);
+    font-weight: 600;
+}
+
+.notification-container__notification-time{
+    color: rgba(0, 0, 0, 0.55);
+    font-size: .85em;
+}
+
+.notification-container__private-message{
+    border: 1px solid grey;
+    color: rgba(0, 0, 0, 0.85);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: .75rem;
+}
+
+.notification-container__photo-comment-preview > img{
+    max-width: 40px;
+}
+
+footer{
+    margin-inline: auto;
+    width: 100%;
+    background-color: rgb(95, 95, 238);
+    position: fixed;
+    bottom: 0;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: .65em;
+    padding: .25rem .5rem;
+}
+
+footer a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:visited{
+    color: white;
+}
+
+@media (min-width:500px){
+    .place-center-grid{
+        display: grid;
+        place-items: center;
+        margin-inline: auto;
+        height: 100vh;
+        max-width: 725px; 
+    }
+
+    .notification-container__photo-comment-preview{
+        margin-left: auto;
+    }
+
+    .notification-container {
+        padding: 2rem;
+        box-shadow: 0px 2px 20px 0px rgba(141, 180, 253, 0.11)
+    }
+}
